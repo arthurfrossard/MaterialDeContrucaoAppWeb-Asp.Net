@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaterialDeContrucaoAppWeb", "MaterialDeContrucaoAppWeb\MaterialDeContrucaoAppWeb.csproj", "{AA4DC198-EA26-457A-9FC6-7FA7BFEE666D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA4DC198-EA26-457A-9FC6-7FA7BFEE666D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA4DC198-EA26-457A-9FC6-7FA7BFEE666D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA4DC198-EA26-457A-9FC6-7FA7BFEE666D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA4DC198-EA26-457A-9FC6-7FA7BFEE666D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11F0BA73-E62F-4937-9DD0-92872E384EED}
+	EndGlobalSection
+EndGlobal

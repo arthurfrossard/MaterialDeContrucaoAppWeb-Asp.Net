@@ -3,6 +3,46 @@
 @{
     ViewData["Title"] = "Quem Somos";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>.....</p>
+<section class="page-section" id="about">
+
+    <div class="text-center">
+        <img src="~/images/logomarca.jpg" class="mx-auto img-fluid" alt="Logomarca da empresa">
+    </div>
+
+    <h1 class="text-center my-5">@ViewData["Title"]</h1>
+
+    <section id="sobre">
+        <h2>Sobre Nós</h2>
+        <p>Desde a nossa fundação há mais de uma década, na movimentada cidade de São Paulo, 
+            nos dedicamos a fornecer soluções confiáveis e de qualidade para todas as necessidades de construção. 
+            Nosso compromisso com a excelência e a satisfação do cliente tem sido o alicerce da nossa jornada. 
+            Com uma equipe apaixonada e especializada, 
+            buscamos constantemente inovar e oferecer o melhor em materiais de construção para todos os projetos, 
+            desde pequenas reformas até grandes empreendimentos.</p>
+    </section>
+
+    <section id="entrega" class="mt-5">
+        <h2>Entrega</h2>
+        <div class="row align-items-center">
+            <div class="clearfix">
+                <img src="~/images/entrega.png" class="col-md-6 float-md-start mb-3 ms-md-3" style="max-height: 200px; max-width: 200px; margin-right: 20px;" alt="Entrega de Materiais">
+                    
+                <p class="my-2">
+                        Nossa equipe de entregas é ágil e eficiente,
+                        garantindo que seus materiais de construção cheguem com segurança e pontualidade ao local desejado. 
+                        Com uma ampla rede logística, abrangemos uma extensa área, atendendo não apenas a região metropolitana, 
+                        mas também expandindo nossos serviços para outras cidades do país. Priorizamos a integridade dos materiais e a satisfação do cliente, 
+                        garantindo uma experiência de entrega tranquila e confiável para todos os pedidos, independentemente do tamanho do projeto.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="mt-5">
+        <h2>Contato</h2>
+        <p>Entre em contato conosco para mais informações:</p>
+        <p>Email: <a href="mailto:contato@suaempresa.com">contato@suaempresa.com</a></p>
+        <p>Telefone: <a href="tel:+559999999999">(99) 9999-9999</a></p>
+    </section>
+</section>

@@ -1,20 +1,24 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MaterialDeContrucaoAppWeb.Models;
+using MaterialDeContrucaoAppWeb.Services;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace MaterialDeContrucaoAppWeb.Pages
+namespace MaterialDeContrucaoAppWeb.Pages;
+
+public class IndexModel : PageModel
 {
-    public class IndexModel : PageModel
+    private IServiceProduto _service;
+
+    public IndexModel(IServiceProduto service)
     {
-        private readonly ILogger<IndexModel> _logger;
+        _service = service;
+    }
 
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-        }
+    public IList<Produto> ListaProduto { get; private set; }
 
-        public void OnGet()
-        {
+    public void OnGet()
+    {
+        ViewData["Title"] = "Home page";
 
-        }
+        ListaProduto = _service.ObterTodos();
     }
 }

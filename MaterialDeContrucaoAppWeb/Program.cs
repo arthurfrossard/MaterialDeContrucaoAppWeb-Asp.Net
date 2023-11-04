@@ -1,7 +1,11 @@
+using MaterialDeContrucaoAppWeb.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddSingleton<IServiceProduto, ServiceProduto>();
 
 var app = builder.Build();
 

@@ -1,0 +1,57 @@
+﻿@page
+@model MaterialDeContrucaoAppWeb.Pages.IncluirModel
+
+<div class="row pt-5">
+    <div class="col-md-4">
+        <form method="post">
+            <h4>Inclusão de Produto</h4>
+            <hr />
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Produto.Nome" class="control-label"></label>
+                <input asp-for="Produto.Nome" class="form-control" />
+                <span asp-validation-for="Produto.Nome" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Produto.Descricao" class="control-label"></label>
+                <input asp-for="Produto.Descricao" class="form-control" />
+                <span asp-validation-for="Produto.Descricao" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Produto.ImagemUrl" class="control-label"></label>
+                <input asp-for="Produto.ImagemUrl" class="form-control" />
+                <span asp-validation-for="Produto.ImagemUrl" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Produto.Preco" class="control-label"></label>
+                <input asp-for="Produto.Preco" class="form-control" />
+                <span asp-validation-for="Produto.Preco" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-3 mb-3">
+                <input class="form-check-input" asp-for="Produto.EntregaExpressa" />
+                <label asp-for="Produto.EntregaExpressa"></label>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Produto.DataCadastro" class="control-label"></label>
+                <input asp-for="Produto.DataCadastro" class="form-control" />
+                <span asp-validation-for="Produto.DataCadastro" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-4">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

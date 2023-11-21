@@ -39,6 +39,8 @@ namespace MaterialDeContrucaoAppWeb.Pages
             //alteração
             _service.Alterar(Produto);
 
+            TempData["TempMensagemSucesso"] = true;
+
             return RedirectToPage("/Index");
         }
 
@@ -46,6 +48,8 @@ namespace MaterialDeContrucaoAppWeb.Pages
         {
             //exclusão
             _service.Excluir(Produto.ProdutoId);
+
+            TempData["TempMensagemSucesso"] = true;
 
             return RedirectToPage("/Index");
         }

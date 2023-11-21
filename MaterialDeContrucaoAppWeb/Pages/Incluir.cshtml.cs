@@ -27,6 +27,8 @@ namespace MaterialDeContrucaoAppWeb.Pages
             //inclusão
             _service.Incluir(Produto);
 
+            TempData["TempMensagemSucesso"] = true;
+
             return RedirectToPage("/Index");
         }
     }

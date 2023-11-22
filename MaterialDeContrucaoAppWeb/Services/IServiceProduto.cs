@@ -9,4 +9,5 @@ public interface IServiceProduto
     void Incluir(Produto produto);
     void Alterar(Produto produto);
     void Excluir(int id);
+    IList<Marca> ObterTodasMarcas();
 }

@@ -2,11 +2,13 @@ using MaterialDeContrucaoAppWeb.Models;
 using MaterialDeContrucaoAppWeb.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace MaterialDeContrucaoAppWeb.Pages
 {
     public class EditarModel : PageModel
     {
+        public SelectList MarcaOptionItems { get; set; }
         private IServiceProduto _service;
 
         public EditarModel(IServiceProduto service)
@@ -20,6 +22,10 @@ namespace MaterialDeContrucaoAppWeb.Pages
         public IActionResult OnGet(int id)
         {
             Produto = _service.Obter(id);
+
+            MarcaOptionItems = new SelectList(_service.ObterTodasMarcas(),
+                                               nameof(Marca.MarcaId),
+                                               nameof(Marca.Descricao));
 
             if (Produto == null)
             {

@@ -4,6 +4,7 @@ using MaterialDeContrucaoAppWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MaterialDeContrucaoAppWeb.Data.Migrations
 {
     [DbContext(typeof(MatConstDBContext))]
-    partial class MatConstDBContextModelSnapshot : ModelSnapshot
+    [Migration("20231122222150_AdicionarTabelaMarcas")]
+    partial class AdicionarTabelaMarcas
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -62,9 +65,6 @@ namespace MaterialDeContrucaoAppWeb.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("MarcaId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -75,21 +75,7 @@ namespace MaterialDeContrucaoAppWeb.Data.Migrations
 
                     b.HasKey("ProdutoId");
 
-                    b.HasIndex("MarcaId");
-
                     b.ToTable("Produtos");
-                });
-
-            modelBuilder.Entity("MaterialDeContrucaoAppWeb.Models.Produto", b =>
-                {
-                    b.HasOne("MaterialDeContrucaoAppWeb.Models.Marca", null)
-                        .WithMany("Produtos")
-                        .HasForeignKey("MarcaId");
-                });
-
-            modelBuilder.Entity("MaterialDeContrucaoAppWeb.Models.Marca", b =>
-                {
-                    b.Navigation("Produtos");
                 });
 #pragma warning restore 612, 618
         }

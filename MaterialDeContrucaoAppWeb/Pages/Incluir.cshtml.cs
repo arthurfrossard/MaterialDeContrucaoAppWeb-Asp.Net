@@ -2,16 +2,25 @@ using MaterialDeContrucaoAppWeb.Models;
 using MaterialDeContrucaoAppWeb.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace MaterialDeContrucaoAppWeb.Pages
 {
     public class IncluirModel : PageModel
     {
+        public SelectList MarcaOptionItems { get; set; }
         private IServiceProduto _service;
 
         public IncluirModel(IServiceProduto service)
         {
             _service = service;
+        }
+
+        public void OnGet()
+        {
+            MarcaOptionItems = new SelectList(_service.ObterTodasMarcas(),
+                                                nameof(Marca.MarcaId),
+                                                nameof(Marca.Descricao));
         }
 
         [BindProperty]

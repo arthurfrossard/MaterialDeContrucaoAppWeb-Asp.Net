@@ -22,6 +22,7 @@ public class ServiceProduto : IServiceProduto
         produtoEncontrado.EntregaExpressa = produto.EntregaExpressa;
         produtoEncontrado.DataCadastro = produto.DataCadastro;
         produtoEncontrado.ImagemUrl = produto.ImagemUrl;
+        produtoEncontrado.MarcaId = produto.MarcaId;
         _context.SaveChanges();
     }
 
@@ -47,5 +48,8 @@ public class ServiceProduto : IServiceProduto
     {
         return _context.Produtos.ToList();
     }
+
+    public IList<Marca> ObterTodasMarcas()
+        => _context.Marcas.ToList();
 }
 

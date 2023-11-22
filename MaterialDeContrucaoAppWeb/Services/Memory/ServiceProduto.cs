@@ -85,5 +85,10 @@ public class ServiceProduto : IServiceProduto
         var produtoEncontrado = Obter(id);
         _produtos.Remove(produtoEncontrado);
     }
+
+    public IList<Marca> ObterTodasMarcas()
+    {
+        throw new NotImplementedException();
+    }
 }
 

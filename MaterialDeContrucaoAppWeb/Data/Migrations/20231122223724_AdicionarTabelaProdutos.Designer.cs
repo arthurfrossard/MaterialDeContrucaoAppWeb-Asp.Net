@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MaterialDeContrucaoAppWeb.Data.Migrations
 {
     [DbContext(typeof(MatConstDBContext))]
-    [Migration("20231121233255_AdicionarTabelaProdutos")]
+    [Migration("20231122223724_AdicionarTabelaProdutos")]
     partial class AdicionarTabelaProdutos
     {
         /// <inheritdoc />
@@ -24,6 +24,23 @@ namespace MaterialDeContrucaoAppWeb.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("MaterialDeContrucaoAppWeb.Models.Marca", b =>
+                {
+                    b.Property<int>("MarcaId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MarcaId"));
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MarcaId");
+
+                    b.ToTable("Marcas");
+                });
 
             modelBuilder.Entity("MaterialDeContrucaoAppWeb.Models.Produto", b =>
                 {

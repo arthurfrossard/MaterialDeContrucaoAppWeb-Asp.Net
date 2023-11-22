@@ -45,6 +45,17 @@
                 <span asp-validation-for="Produto.DataCadastro" class="text-danger"></span>
             </div>
 
+            <div class="form-group mt-3 mb-3">
+                <label asp-for="Produto.MarcaId"></label>
+
+                <select class="form-select" asp-for="Produto.MarcaId"
+                        asp-items="Model.MarcaOptionItems">
+                    <option value="">Selecione uma opção</option>
+                </select>
+                <span asp-validation-for="Produto.MarcaId" class="text-danger">
+                </span>
+            </div>
+
             <div class="form-group mt-4">
                 <input type="submit" value="Salvar" class="btn btn-primary" />
                 <input type="submit" value="Excluir" class="btn btn-danger"

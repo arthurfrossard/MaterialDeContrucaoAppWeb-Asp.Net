@@ -1,6 +1,6 @@
 ﻿using MaterialDeContrucaoAppWeb.Models;
 
-namespace MaterialDeContrucaoAppWeb.Services;
+namespace MaterialDeContrucaoAppWeb.Services.Memory;
 
 public class ServiceProduto : IServiceProduto
 {

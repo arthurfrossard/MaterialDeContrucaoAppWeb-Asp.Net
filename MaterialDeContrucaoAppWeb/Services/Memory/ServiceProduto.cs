@@ -90,5 +90,10 @@ public class ServiceProduto : IServiceProduto
     {
         throw new NotImplementedException();
     }
+
+    public Marca ObterMarca(int id)
+    {
+        throw new NotImplementedException();
+    }
 }
 

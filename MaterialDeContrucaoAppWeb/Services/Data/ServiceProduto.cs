@@ -51,5 +51,8 @@ public class ServiceProduto : IServiceProduto
 
     public IList<Marca> ObterTodasMarcas()
         => _context.Marcas.ToList();
+
+    public Marca ObterMarca(int id)
+        => _context.Marcas.SingleOrDefault(item => item.MarcaId == id);
 }
 

@@ -15,6 +15,13 @@
         <p>@Model.Produto.Descricao</p>
         <h4 class="my-3">Mais Info:</h4>
         <ul>
+            @if (Model.DescricaoMarca is not null)
+            {
+                <li>
+                    <label asp-for="Produto.MarcaId"></label>:
+                    @Html.DisplayFor(model => model.DescricaoMarca)
+                </li>
+            }
             <li>
                 <label asp-for="Produto.Preco"></label>:
                 @Html.DisplayFor(model => model.Produto.Preco)

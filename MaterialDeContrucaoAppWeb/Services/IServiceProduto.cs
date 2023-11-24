@@ -10,4 +10,5 @@ public interface IServiceProduto
     void Alterar(Produto produto);
     void Excluir(int id);
     IList<Marca> ObterTodasMarcas();
+    Marca ObterMarca(int id);
 }

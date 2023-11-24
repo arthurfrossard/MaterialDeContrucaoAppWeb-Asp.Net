@@ -8,6 +8,7 @@ namespace MaterialDeContrucaoAppWeb.Pages
     public class DetalhesModel : PageModel
     {
         private IServiceProduto _service;
+        public string DescricaoMarca { get; set; }
 
         public DetalhesModel(IServiceProduto service) => _service = service;
 
@@ -16,6 +17,10 @@ namespace MaterialDeContrucaoAppWeb.Pages
         public IActionResult OnGet(int id)
         {
             Produto = _service.Obter(id);
+            if (Produto.MarcaId is not null)
+            {
+                DescricaoMarca = _service.ObterMarca(Produto.MarcaId.Value).Descricao;
+            }
 
             if (Produto == null)
             {

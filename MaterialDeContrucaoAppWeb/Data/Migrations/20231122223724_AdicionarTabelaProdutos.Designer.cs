@@ -55,8 +55,8 @@ namespace MaterialDeContrucaoAppWeb.Data.Migrations
 
                     b.Property<string>("Descricao")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<bool>("EntregaExpressa")
                         .HasColumnType("bit");

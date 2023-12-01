@@ -3,6 +3,7 @@ using MaterialDeContrucaoAppWeb.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using NToastNotify;
 
 namespace MaterialDeContrucaoAppWeb.Pages
 {
@@ -10,10 +11,13 @@ namespace MaterialDeContrucaoAppWeb.Pages
     {
         public SelectList MarcaOptionItems { get; set; }
         private IServiceProduto _service;
+        private IToastNotification _toastNotification;
 
-        public IncluirModel(IServiceProduto service)
+        public IncluirModel(IServiceProduto service,
+                                IToastNotification toastNotification)
         {
             _service = service;
+            _toastNotification = toastNotification;
         }
 
         public void OnGet()
@@ -36,7 +40,7 @@ namespace MaterialDeContrucaoAppWeb.Pages
             //inclusão
             _service.Incluir(Produto);
 
-            TempData["TempMensagemSucesso"] = true;
+            _toastNotification.AddSuccessToastMessage("Inclusão de produto realizada com sucesso!");
 
             return RedirectToPage("/Index");
         }

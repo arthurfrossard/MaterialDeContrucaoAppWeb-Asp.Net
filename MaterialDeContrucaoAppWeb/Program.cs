@@ -2,11 +2,17 @@ using MaterialDeContrucaoAppWeb.Data;
 using MaterialDeContrucaoAppWeb.Services;
 using MaterialDeContrucaoAppWeb.Services.Data;
 using Microsoft.EntityFrameworkCore;
+using NToastNotify;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+builder.Services.AddRazorPages().AddNToastNotifyToastr(new ToastrOptions()
+                                 {
+                                    TimeOut = 10000,
+                                    ProgressBar = false,
+                                    PositionClass = ToastPositions.TopRight
+                                 });
 
 builder.Services.AddTransient<IServiceProduto, ServiceProduto>();
 builder.Services.AddDbContext<MatConstDBContext>();
@@ -29,6 +35,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseNToastNotify();
 
 app.UseAuthorization();
 

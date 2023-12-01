@@ -52,5 +52,6 @@
     <script src="~/js/scripts.js asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
+    @await Component.InvokeAsync("NToastNotify")
 </body>
 </html>

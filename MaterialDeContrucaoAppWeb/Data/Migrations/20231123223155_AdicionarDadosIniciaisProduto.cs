@@ -65,7 +65,7 @@ namespace MaterialDeContrucaoAppWeb.Data.Migrations
                     Nome = "Argila 25KG",
                     Descricao = "Versatilidade compacta, essencial para projetos criativos.",
                     ImagemUrl = "/images/produtos/argila.jpg",
-                    Preco = 7.50,
+                    Preco = 7.00,
                     EntregaExpressa = true,
                     DataCadastro = DateTime.Now,
                     MarcaId = 4,

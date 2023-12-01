@@ -3,6 +3,7 @@ using MaterialDeContrucaoAppWeb.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using NToastNotify;
 
 namespace MaterialDeContrucaoAppWeb.Pages
 {
@@ -10,10 +11,13 @@ namespace MaterialDeContrucaoAppWeb.Pages
     {
         public SelectList MarcaOptionItems { get; set; }
         private IServiceProduto _service;
+        private IToastNotification _toastNotification;
 
-        public EditarModel(IServiceProduto service)
+        public EditarModel(IServiceProduto service,
+                                IToastNotification toastNotification)
         {
             _service = service;
+            _toastNotification = toastNotification;
         }
 
         [BindProperty]
@@ -45,7 +49,7 @@ namespace MaterialDeContrucaoAppWeb.Pages
             //alteração
             _service.Alterar(Produto);
 
-            TempData["TempMensagemSucesso"] = true;
+            _toastNotification.AddSuccessToastMessage("Alteração de produto realizada com sucesso!");
 
             return RedirectToPage("/Index");
         }
@@ -55,7 +59,7 @@ namespace MaterialDeContrucaoAppWeb.Pages
             //exclusão
             _service.Excluir(Produto.ProdutoId);
 
-            TempData["TempMensagemSucesso"] = true;
+            _toastNotification.AddSuccessToastMessage("Exclusão de produto realizada com sucesso!");
 
             return RedirectToPage("/Index");
         }

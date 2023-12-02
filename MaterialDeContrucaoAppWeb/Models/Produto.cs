@@ -38,4 +38,7 @@ public class Produto
 
     [Display(Name = "Marca")]
     public int? MarcaId { get; set; }
+
+    [Display(Name = "Categoria")]
+    public ICollection<Categoria>? Categorias { get; set; }
 }

@@ -10,6 +10,7 @@ namespace MaterialDeContrucaoAppWeb.Pages
     public class IncluirModel : PageModel
     {
         public SelectList MarcaOptionItems { get; set; }
+        public SelectList CategoriaOptionItems { get; set; }
         private IServiceProduto _service;
         private IToastNotification _toastNotification;
 
@@ -25,13 +26,24 @@ namespace MaterialDeContrucaoAppWeb.Pages
             MarcaOptionItems = new SelectList(_service.ObterTodasMarcas(),
                                                 nameof(Marca.MarcaId),
                                                 nameof(Marca.Descricao));
+
+            CategoriaOptionItems = new SelectList(_service.ObterTodasCategorias(),
+                                    nameof(Categoria.CategoriaId),
+                                    nameof(Categoria.Descricao));
         }
 
         [BindProperty]
         public Produto Produto { get; set; }
 
+        [BindProperty]
+        public IList<int> CategoriaIds { get; set; }
+
         public IActionResult OnPost()
         {
+            Produto.Categorias = _service.ObterTodasCategorias()
+                                            .Where(item => CategoriaIds.Contains(item.CategoriaId))
+                                            .ToList();
+
             if (!ModelState.IsValid)
             {
                 return Page();

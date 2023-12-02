@@ -1,5 +1,6 @@
 ﻿using MaterialDeContrucaoAppWeb.Data;
 using MaterialDeContrucaoAppWeb.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace MaterialDeContrucaoAppWeb.Services.Data;
 
@@ -23,6 +24,7 @@ public class ServiceProduto : IServiceProduto
         produtoEncontrado.DataCadastro = produto.DataCadastro;
         produtoEncontrado.ImagemUrl = produto.ImagemUrl;
         produtoEncontrado.MarcaId = produto.MarcaId;
+        produtoEncontrado.Categorias = produto.Categorias;
         _context.SaveChanges();
     }
 
@@ -41,7 +43,9 @@ public class ServiceProduto : IServiceProduto
 
     public Produto Obter(int id)
     {
-        return _context.Produtos.SingleOrDefault(item => item.ProdutoId == id);
+        return _context.Produtos
+                    .Include(item => item.Categorias)
+                    .SingleOrDefault(item => item.ProdutoId == id);
     }
 
     public IList<Produto> ObterTodos()
@@ -54,5 +58,8 @@ public class ServiceProduto : IServiceProduto
 
     public Marca ObterMarca(int id)
         => _context.Marcas.SingleOrDefault(item => item.MarcaId == id);
+
+    public IList<Categoria> ObterTodasCategorias()
+        => _context.Categorias.ToList();
 }
 

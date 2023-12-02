@@ -4,6 +4,7 @@ using MaterialDeContrucaoAppWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MaterialDeContrucaoAppWeb.Data.Migrations
 {
     [DbContext(typeof(MatConstDBContext))]
-    partial class MatConstDBContextModelSnapshot : ModelSnapshot
+    [Migration("20231202214143_AdiconarDadosIniciaisCategorias")]
+    partial class AdiconarDadosIniciaisCategorias
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,21 +24,6 @@ namespace MaterialDeContrucaoAppWeb.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("CategoriaProduto", b =>
-                {
-                    b.Property<int>("CategoriasCategoriaId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProdutosProdutoId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CategoriasCategoriaId", "ProdutosProdutoId");
-
-                    b.HasIndex("ProdutosProdutoId");
-
-                    b.ToTable("CategoriaProduto");
-                });
 
             modelBuilder.Entity("MaterialDeContrucaoAppWeb.Models.Categoria", b =>
                 {
@@ -110,21 +98,6 @@ namespace MaterialDeContrucaoAppWeb.Data.Migrations
                     b.HasIndex("MarcaId");
 
                     b.ToTable("Produtos");
-                });
-
-            modelBuilder.Entity("CategoriaProduto", b =>
-                {
-                    b.HasOne("MaterialDeContrucaoAppWeb.Models.Categoria", null)
-                        .WithMany()
-                        .HasForeignKey("CategoriasCategoriaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MaterialDeContrucaoAppWeb.Models.Produto", null)
-                        .WithMany()
-                        .HasForeignKey("ProdutosProdutoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("MaterialDeContrucaoAppWeb.Models.Produto", b =>

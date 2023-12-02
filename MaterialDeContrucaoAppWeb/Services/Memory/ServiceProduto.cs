@@ -95,5 +95,10 @@ public class ServiceProduto : IServiceProduto
     {
         throw new NotImplementedException();
     }
+
+    public IList<Categoria> ObterTodasCategorias()
+    {
+        throw new NotImplementedException();
+    }
 }
 

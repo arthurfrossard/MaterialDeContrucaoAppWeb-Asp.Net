@@ -90,7 +90,7 @@ namespace MaterialDeContrucaoAppWeb.Data.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<bool>("EntregaExpressa")
+                    b.Property<bool>("DisponibilidadeEstoque")
                         .HasColumnType("bit");
 
                     b.Property<string>("ImagemUrl")

@@ -20,7 +20,7 @@ namespace MaterialDeContrucaoAppWeb.Data.Migrations
                     Descricao = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     ImagemUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Preco = table.Column<double>(type: "float", nullable: false),
-                    EntregaExpressa = table.Column<bool>(type: "bit", nullable: false),
+                    DisponibilidadeEstoque = table.Column<bool>(type: "bit", nullable: false),
                     DataCadastro = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>

@@ -20,7 +20,7 @@ public class ServiceProduto : IServiceProduto
         produtoEncontrado.Nome = produto.Nome;
         produtoEncontrado.Descricao = produto.Descricao;
         produtoEncontrado.Preco = produto.Preco;
-        produtoEncontrado.EntregaExpressa = produto.EntregaExpressa;
+        produtoEncontrado.DisponibilidadeEstoque = produto.DisponibilidadeEstoque;
         produtoEncontrado.DataCadastro = produto.DataCadastro;
         produtoEncontrado.ImagemUrl = produto.ImagemUrl;
         produtoEncontrado.MarcaId = produto.MarcaId;

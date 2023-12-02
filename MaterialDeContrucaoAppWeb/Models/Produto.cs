@@ -25,10 +25,10 @@ public class Produto
     [DataType(DataType.Currency)]
     public double Preco { get; set; }
 
-    [Display(Name = "Entrega Expressa")]
-    public bool EntregaExpressa { get; set; }
+    [Display(Name = "Disponibilidade Estoque")]
+    public bool DisponibilidadeEstoque { get; set; }
 
-    public string EntregaExpressaFormatada => EntregaExpressa ? "Sim" : "Não";
+    public string DisponibilidadeEstoqueFormatada => DisponibilidadeEstoque ? "Sim" : "Não";
 
     [Required(ErrorMessage = "Campo 'Disponível em' obrigatório.")]
     [Display(Name = "Disponível em")]

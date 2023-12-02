@@ -20,7 +20,7 @@ public class ServiceProduto : IServiceProduto
                 Descricao = "Base robusta, confiança em cada saco. Resistência confiável para construção sólida.!",
                 ImagemUrl = "/images/produtos/cimento.jpeg",
                 Preco = 33.00,
-                EntregaExpressa = true,
+                DisponibilidadeEstoque = true,
                 DataCadastro = DateTime.Now
             },
             new Produto
@@ -30,7 +30,7 @@ public class ServiceProduto : IServiceProduto
                 Descricao = "Pureza essencial para construção sólida, um metro de qualidade.",
                 ImagemUrl = "/images/produtos/areia.jpeg",
                 Preco = 120.00,
-                EntregaExpressa = true,
+                DisponibilidadeEstoque = true,
                 DataCadastro = DateTime.Now
             },
             new Produto
@@ -40,7 +40,7 @@ public class ServiceProduto : IServiceProduto
                 Descricao = "Fundação forte, um metro de durabilidade essencial.",
                 ImagemUrl = "/images/produtos/pedra1.jpeg",
                 Preco = 130.00,
-                EntregaExpressa = false,
+                DisponibilidadeEstoque = false,
                 DataCadastro = DateTime.Now
             },
             new Produto
@@ -50,7 +50,7 @@ public class ServiceProduto : IServiceProduto
                 Descricao = "Versatilidade compacta, essencial para projetos criativos.",
                 ImagemUrl = "/images/produtos/argila.jpg",
                 Preco = 7.50,
-                EntregaExpressa = true,
+                DisponibilidadeEstoque = true,
                 DataCadastro = DateTime.Now
             },
         };
@@ -75,7 +75,7 @@ public class ServiceProduto : IServiceProduto
         produtoEncontrado.Nome = produto.Nome;
         produtoEncontrado.Descricao = produto.Descricao;
         produtoEncontrado.Preco = produto.Preco;
-        produtoEncontrado.EntregaExpressa = produto.EntregaExpressa;
+        produtoEncontrado.DisponibilidadeEstoque = produto.DisponibilidadeEstoque;
         produtoEncontrado.DataCadastro = produto.DataCadastro;
         produtoEncontrado.ImagemUrl = produto.ImagemUrl;
     }

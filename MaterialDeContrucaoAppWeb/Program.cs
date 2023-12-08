@@ -3,11 +3,16 @@ using MaterialDeContrucaoAppWeb.Services;
 using MaterialDeContrucaoAppWeb.Services.Data;
 using Microsoft.EntityFrameworkCore;
 using NToastNotify;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages().AddNToastNotifyToastr(new ToastrOptions()
+builder.Services.AddRazorPages(options => {
+                                options.Conventions.AuthorizeFolder("/Marcas");
+                                options.Conventions.AuthorizeFolder("/Categorias");
+                                })
+                                 .AddNToastNotifyToastr(new ToastrOptions()
                                  {
                                     TimeOut = 10000,
                                     ProgressBar = false,
@@ -16,6 +21,24 @@ builder.Services.AddRazorPages().AddNToastNotifyToastr(new ToastrOptions()
 
 builder.Services.AddTransient<IServiceProduto, ServiceProduto>();
 builder.Services.AddDbContext<MatConstDBContext>();
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddEntityFrameworkStores<MatConstDBContext>();
+
+builder.Services.Configure<IdentityOptions>(options => {
+    options.Password.RequireDigit = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequiredLength = 3;
+
+    // Lockout settings
+    options.Lockout.MaxFailedAccessAttempts = 30;
+    options.Lockout.AllowedForNewUsers = true;
+
+    // User settings
+    options.User.RequireUniqueEmail = true;
+});
 
 var app = builder.Build();
 
@@ -37,6 +60,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseNToastNotify();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

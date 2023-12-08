@@ -1,5 +1,6 @@
 using MaterialDeContrucaoAppWeb.Models;
 using MaterialDeContrucaoAppWeb.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -7,6 +8,7 @@ using NToastNotify;
 
 namespace MaterialDeContrucaoAppWeb.Pages
 {
+    [Authorize]
     public class EditarModel : PageModel
     {
         public SelectList MarcaOptionItems { get; set; }

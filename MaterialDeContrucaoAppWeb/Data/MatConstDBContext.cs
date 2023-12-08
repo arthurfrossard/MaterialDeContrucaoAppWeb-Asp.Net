@@ -1,9 +1,10 @@
 ﻿using MaterialDeContrucaoAppWeb.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace MaterialDeContrucaoAppWeb.Data;
 
-public class MatConstDBContext : DbContext 
+public class MatConstDBContext : IdentityDbContext
 {
     public DbSet<Produto> Produtos { get; set; }
     public DbSet<Marca> Marcas { get; set; }

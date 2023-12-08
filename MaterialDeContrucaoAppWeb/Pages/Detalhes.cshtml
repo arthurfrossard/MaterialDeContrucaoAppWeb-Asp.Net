@@ -42,8 +42,11 @@
                 @Html.DisplayFor(model => model.Produto.DataCadastro)
             </li>
         </ul>
-        <a class="btn my-3 btn-primary"
-           asp-page="/Editar" asp-route-id="@Model.Produto.ProdutoId">Editar</a>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <a class="btn my-3 btn-primary"
+               asp-page="/Editar" asp-route-id="@Model.Produto.ProdutoId">Editar</a>
+        }
     </div>
 
 </div>

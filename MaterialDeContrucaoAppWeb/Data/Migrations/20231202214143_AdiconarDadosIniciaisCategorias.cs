@@ -22,9 +22,15 @@ namespace MaterialDeContrucaoAppWeb.Data.Migrations
             {
                 new Categoria() { Descricao = "Ferramentas" },
                 new Categoria() { Descricao = "Decoração" },
-                new Categoria() { Descricao = "Material bruto" },
+                new Categoria() { Descricao = "Jardim" },
+                new Categoria() { Descricao = "Mobilia" },
+                new Categoria() { Descricao = "Material básico" },
+                new Categoria() { Descricao = "Ferragens" },
+                new Categoria() { Descricao = "Ferramentas" },
                 new Categoria() { Descricao = "Acabamento" },
+                new Categoria() { Descricao = "Elétrica" },
                 new Categoria() { Descricao = "Utilidades" },
+                new Categoria() { Descricao = "Pintura" },
             };
         }
     }

@@ -24,6 +24,11 @@ namespace MaterialDeContrucaoAppWeb.Data.Migrations
                 new Marca() { Descricao = "Holcim" },
                 new Marca() { Descricao = "Mineradora Serra Verde" },
                 new Marca() { Descricao = "Argigoma" },
+                new Marca() { Descricao = "Steck" },
+                new Marca() { Descricao = "Vap" },
+                new Marca() { Descricao = "Cozimax" },
+                new Marca() { Descricao = "Marmoraria AKI" },
+                new Marca() { Descricao = "Coral" },
             };
         }
     }

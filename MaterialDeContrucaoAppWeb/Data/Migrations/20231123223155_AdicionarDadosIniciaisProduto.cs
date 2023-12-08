@@ -70,6 +70,66 @@ namespace MaterialDeContrucaoAppWeb.Data.Migrations
                     DataCadastro = DateTime.Now,
                     MarcaId = 4,
                 },
+                new Produto
+                {
+                    Nome = "Disjuntor Bipolar 70A DIN",
+                    Descricao = "Proteção eficiente para circuitos elétricos com alta capacidade de corrente. Confiabilidade e segurança garantidas.",
+                    ImagemUrl = "/images/produtos/disjuntor.webp",
+                    Preco = 75.00,
+                    DisponibilidadeEstoque = true,
+                    DataCadastro = DateTime.Now,
+                    MarcaId = 5,
+                },
+                new Produto
+                {
+                    Nome = "Torneira parede gourmet",
+                    Descricao = "Elegância e funcionalidade para sua cozinha. Design moderno e alta performance em um só produto.",
+                    ImagemUrl = "/images/produtos/torneira.jpg",
+                    Preco = 90.00,
+                    DisponibilidadeEstoque = true,
+                    DataCadastro = DateTime.Now,
+                    MarcaId = 6,
+                },
+                new Produto
+                {
+                    Nome = "Vaso de planta preto",
+                    Descricao = "Sofisticação e estilo para seu espaço verde. Destaque suas plantas com este toque contemporâneo.",
+                    ImagemUrl = "/images/produtos/vaso_planta.jpg",
+                    Preco = 9.00,
+                    DisponibilidadeEstoque = true,
+                    DataCadastro = DateTime.Now,
+                    MarcaId = 6,
+                },
+                new Produto
+                {
+                    Nome = "Armario de cozinha",
+                    Descricao = "Organize com praticidade e elegância. Solução completa para um espaço funcional e charmoso.",
+                    ImagemUrl = "/images/produtos/armario_cozinha.jpeg",
+                    Preco = 550.00,
+                    DisponibilidadeEstoque = true,
+                    DataCadastro = DateTime.Now,
+                    MarcaId = 7,
+                },
+                new Produto
+                {
+                    Nome = "Pia granito verde corumba 2mt",
+                    Descricao = "Beleza natural e durabilidade. Transforme sua cozinha com estilo e qualidade excepcionais.",
+                    ImagemUrl = "/images/produtos/pia_granito.webp",
+                    Preco = 450.00,
+                    DisponibilidadeEstoque = true,
+                    DataCadastro = DateTime.Now,
+                    MarcaId = 8,
+                },
+                new Produto
+                {
+                    Nome = "Tinta rende mais 3,6lt",
+                    Descricao = "Cobertura superior, economia garantida. Transforme ambientes com menos produto e mais eficiência.",
+                    ImagemUrl = "/images/produtos/tinta.jpeg",
+                    Preco = 99.00,
+                    DisponibilidadeEstoque = true,
+                    DataCadastro = DateTime.Now,
+                    MarcaId = 9,
+                },
             };
         }
 

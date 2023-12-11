@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using NToastNotify;
+using System.Globalization;
 
 namespace MaterialDeContrucaoAppWeb.Pages
 {
@@ -50,6 +51,14 @@ namespace MaterialDeContrucaoAppWeb.Pages
             {
                 return Page();
             }
+
+            if (!double.TryParse(Request.Form["Produto.Preco"], NumberStyles.Any, CultureInfo.InvariantCulture, out double preco))
+            {
+                ModelState.AddModelError("Produto.Preco", "Formato inválido para o campo de preço.");
+                return Page();
+            }
+
+            Produto.Preco = preco;
 
             //inclusão
             _service.Incluir(Produto);

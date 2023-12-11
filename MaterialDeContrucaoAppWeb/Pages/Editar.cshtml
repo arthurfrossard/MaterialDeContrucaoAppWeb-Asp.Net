@@ -30,7 +30,7 @@
 
             <div class="form-group">
                 <label asp-for="Produto.Preco" class="control-label"></label>
-                <input asp-for="Produto.Preco" class="form-control" />
+                <input asp-for="Produto.Preco" class="form-control" value="@Model.Produto.Preco.ToString("F2")" />
                 <span asp-validation-for="Produto.Preco" class="text-danger"></span>
             </div>
 

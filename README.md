@@ -7,7 +7,6 @@ Este é um projeto de uma aplicação web para uma loja de materiais de constru�
 - Visualização de produtos disponíveis na loja
 - Autenticação de usuários para acesso exclusivo
 - CRUD de produtos para usuários autenticados
-- Gerenciamento eficiente do estoque da loja
 
 ## Tecnologias Utilizadas
 

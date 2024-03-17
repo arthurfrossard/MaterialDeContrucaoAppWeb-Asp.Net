@@ -15,17 +15,6 @@ Este é um projeto de uma aplicação web para uma loja de materiais de constru�
 - ASP.NET Core (framework web)
 - Entity Framework Core (ORM para interação com banco de dados)
 - Razor Pages (tecnologia para criação de páginas web dinâmicas)
-- HTML/CSS/JavaScript (tecnologias web para criação de interfaces interativas)
-
-## Como Usar
-
-1. Clone este repositório para sua máquina local.
-2. Certifique-se de ter o SDK do .NET Core instalado em sua máquina.
-3. Abra o projeto em seu ambiente de desenvolvimento preferido.
-4. Configure a conexão com o banco de dados no arquivo `appsettings.json`.
-5. No terminal, execute o comando `dotnet ef database update` para criar o banco de dados com as migrações fornecidas.
-6. Execute a aplicação usando o comando `dotnet run`.
-7. Acesse a aplicação em seu navegador através do endereço `http://localhost:5000`.
 
 ## Contribuições
 
